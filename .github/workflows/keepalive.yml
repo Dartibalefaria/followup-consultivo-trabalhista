@@ -1,0 +1,20 @@
+name: Keepalive
+on:
+  schedule:
+    # A cada 50 dias, antes do limite de 60 dias do GitHub
+    - cron: "0 12 1,21 * *"
+  workflow_dispatch:
+
+jobs:
+  keepalive:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Keepalive commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git commit --allow-empty -m "keepalive: prevent scheduled workflow from being disabled"
+          git push

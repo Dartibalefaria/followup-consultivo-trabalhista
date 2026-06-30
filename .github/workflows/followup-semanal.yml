@@ -30,11 +30,3 @@ jobs:
           REMETENTE:     ${{ secrets.REMETENTE }}
           SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
         run: python followup-trabalhista.py
-
-  keepalive:
-    runs-on: ubuntu-latest
-    permissions:
-      actions: write
-    steps:
-      - uses: actions/checkout@v4
-      - uses: gautamkrishnar/keepalive-workflow@v2
