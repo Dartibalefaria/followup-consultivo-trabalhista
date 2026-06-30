@@ -56,12 +56,11 @@ GRAPH_BASE    = "https://graph.microsoft.com/v1.0"
 
 TEST_LIMIT    = int(os.environ.get("TEST_LIMIT", "0"))
 
-# Destinatários via secret — suporta valor único ou lista separada por vírgula
-_dest_raw = os.environ.get("DESTINATARIOS_TRABALHISTA", "")
-DESTINATARIOS = [e.strip() for e in _dest_raw.split(",") if e.strip()]
-if not DESTINATARIOS:
-    print("[erro] DESTINATARIOS_TRABALHISTA não definido nos secrets.")
-    sys.exit(2)
+# Destinatários FIXOS
+DESTINATARIOS = [
+    "karin.gambaro@dartibalefaria.com",
+    "moisesmiguel.garcia@dartibalefaria.com",
+]
 
 # Os 2 integrantes do consultivo trabalhista
 CONSULTIVO_TRABALHISTA_EMAILS = [
