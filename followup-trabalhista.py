@@ -57,6 +57,7 @@ TEST_LIMIT    = int(os.environ.get("TEST_LIMIT", "0"))
 DESTINATARIOS = [
     "karin.gambaro@dartibalefaria.com",
     "moisesmiguel.garcia@dartibalefaria.com",
+    "trabalhistaconsultiva@dartibalefaria.com",
 ]
 
 # Os integrantes do CONSULTIVO — o filtro mantém só tarefas destas pessoas
